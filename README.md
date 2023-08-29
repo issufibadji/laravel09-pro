@@ -8,8 +8,8 @@
 </p>
 
 
-##  Sumário
-
+# Sumário
+### The Basics
 - Routing
 - Basic Routing
 - Redirect Routes
