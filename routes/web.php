@@ -2,34 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
-/**9-Agrupando rotas usando prefixo */
+/**10 - Agrupando rotas com middleware */
 
-
-
-//Prefixos de rota
-
-Route::prefix('user')->group(function () {
-    Route::get('/', function () {
-        return 'Hello!';
-    }); // Matches The "/admin/users" URL
-
-
-    Route::get('{id}', function ($id) {
-        return 'Hello !' .$id;
-    });
-});
-
-//Prefixos de nome de rota
-Route::name('admin')->group(function () {
-    Route::get('/', function () {
+Route::middleware('signed')->group(function () {
+    Route::get('user', function () {
         return 'Hello!';
     })->name('users'); // Matches The "/admin/users" URL
 
 
-    Route::get('/{id}', function ($id) {
+    Route::get('user/{id}', function ($id) {
         return 'Hello !' .$id;
     })->name('user');
 });
+
+
+Route::get('/profile', function () {
+    return 'Hello!';
+})->middleware('auth');
 
 
 
