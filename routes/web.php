@@ -2,24 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-/** é muito interessante para motor de busca  */
-//Route::redirect('rota-a','rota-b', status:301); //com estatus
-//Route::permanentRedirect('rota-a','rota-b');
+/** criar route usando view direto em vez de get*/
+//direcionar view diretamente da rota
 
-Route::get('rota-d',function(){
+Route::view('/welcome','welcome',[
+    'title'=>'Hello World'
+]);
 
-    //Logica Cabulosa
-    return redirect()->route('usuarios'); //return redirect('rota-b');
+Route::get('/',function (){
+    return view('welcome');
 });
 
-
-Route::get('rota-b', function(){
-    return'ROTA B';
-})->name('rotab');
-
-Route::get('users', function() {
-    return 'rota nomeadas!';
-
-})->name('usuarios');
-
-//Redirect::route();
