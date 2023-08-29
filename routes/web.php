@@ -2,13 +2,34 @@
 
 use Illuminate\Support\Facades\Route;
 
-/** 8 - Validando parâmetros globalmente */
+/**9-Agrupando rotas usando prefixo */
 
 
-Route::get('/user/{id}', function ($id) {
-    return 'Hello !' .$id;
+
+//Prefixos de rota
+
+Route::prefix('user')->group(function () {
+    Route::get('/', function () {
+        return 'Hello!';
+    }); // Matches The "/admin/users" URL
+
+
+    Route::get('{id}', function ($id) {
+        return 'Hello !' .$id;
+    });
 });
 
-Route::get('/token/{token}', function ($token) {
-    return $token;
+//Prefixos de nome de rota
+Route::name('admin')->group(function () {
+    Route::get('/', function () {
+        return 'Hello!';
+    })->name('users'); // Matches The "/admin/users" URL
+
+
+    Route::get('/{id}', function ($id) {
+        return 'Hello !' .$id;
+    })->name('user');
 });
+
+
+
