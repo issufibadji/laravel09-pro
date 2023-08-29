@@ -2,23 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-// 1 - Criando rotas
-Route::get( 'users',function(){
-    return 'Listar Tds!!';
+/*Multiplos verbos Http -> com uma unica função*/
+
+Route::match(['get','post'], 'users', function() {
+    return 'Multiplos verbos Http !';
+
 });
 
-Route::post('users/id', function (){
-    return"criado";
-});
-Route::delete('users/id',function (){
-    return'Apagado!';
-});
-Route::put('users/id',function (){
-    return'Atualizado';
-});
-Route::patch('users',function(){
-    return 'Editado!';
-});
-Route::options('users',function (){
-    return 'Option!';
+//ou
+
+Route::any('/', function () {
+    return 'Multiplos verbos Http !';
 });
