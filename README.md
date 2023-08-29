@@ -7,5 +7,21 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Instalação do ambiente
 
+##  Sumário
+
+- Routing
+- Basic Routing
+- Redirect Routes
+- View Routes
+- The Route List
+- Route Parameters
+- Required Parameters
+- Optional Parameters
+- Regular Expression Constraints
+- Route Groups
+- Middleware
+- Subdomain Routing
+- Route Prefixes
+- Route Name Prefixes
+- Fallback Routes
