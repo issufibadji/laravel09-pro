@@ -2,15 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*Multiplos verbos Http -> com uma unica função*/
+/*rota nomeadas!*/
 
-Route::match(['get','post'], 'users', function() {
-    return 'Multiplos verbos Http !';
+Route::get('users', function() {
+    return 'rota nomeadas!';
 
-});
+})->name('users');
 
-//ou
-
-Route::any('/', function () {
-    return 'Multiplos verbos Http !';
-});
+/* ->name('usuarios');*/
