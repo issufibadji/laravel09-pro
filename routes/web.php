@@ -2,23 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
-/**10 - Agrupando rotas com middleware */
+/**11 - Agrupando rotas com subdominio*/
 
-Route::middleware('signed')->group(function () {
-    Route::get('user', function () {
-        return 'Hello!';
-    })->name('users'); // Matches The "/admin/users" URL
+Route::domain('{user}.example.com')->group(function () {
 
+    Route::get('/user/{id}/{name}',function ($id = null, $name = null) {
+        return ' User ' . $id . ' - ' . $name;
+    });
 
-    Route::get('user/{id}', function ($id) {
-        return 'Hello !' .$id;
-    })->name('user');
+    Route::get('/user/{id}', function ($id) {
+        return 'User '.$id;
+    });
 });
-
-
-Route::get('/profile', function () {
-    return 'Hello!';
-})->middleware('auth');
 
 
 
