@@ -25,3 +25,5 @@
 - Route Prefixes
 - Route Name Prefixes
 - Fallback Routes
+- Dependency Injection & Route Parameters
+- Route Model Binding
