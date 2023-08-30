@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UserController;
 
-/**2 - Controllers com parâmetros*/
+/**3 - Injeção de dependência*/
 
-Route::get('/users', [UserController::class, 'index']); //no lugara da function (primeiro item é nome Class e segundo nome metodo no controle)
+Route::get('/users', [UserController::class, 'index']);
+
 Route::get('/user/{id}', [UserController::class, 'show']);
 
 

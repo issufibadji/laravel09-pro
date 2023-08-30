@@ -12,7 +12,10 @@ class UserController extends Controller
         dd('x');
     }
 
-    public function show($id){
-        dd('show', $id);
+    public function show($id, Request $request)
+    {
+
+        dd($request->query('firstname'), $id); //Digite no url:http://127.0.0.1:8000/user/1?firstname=Issufi
+       // dd('show', $id);
     }
 }
