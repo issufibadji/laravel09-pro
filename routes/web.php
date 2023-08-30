@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UserController;
 
-/**4 - Injetando model no controller*/
+/**5 - Aplicando middleware*/
 
 Route::get('/users', [UserController::class, 'index']);
 

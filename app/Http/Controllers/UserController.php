@@ -7,10 +7,19 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('checkToken')->except('index');
+//       $this->middleware(function (){
+//           dd('middleware user');
+//       })->only('index');
+    }
     public function index()
     {
         dd('x');
     }
+
 
     public function show(Request $request, User $user)
     {
