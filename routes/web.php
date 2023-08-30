@@ -1,14 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\UserController;
 
-/**13-Injeção de dependência e parâmetros de rota*/
+/**01-Criar Controller e conetar com a rota*/
 
-Route::get('/user/{user}', function (\App\Models\User $user){
-
-    dd($user); //digite na url: //http://127.0.0.1:8000/user/1
-
-});
+Route::get('/users', [UserController::class, 'index']); //no lugara da function (primeiro item é nome Class e segundo nome metodo no controle)
 
 Route::fallback(function () {
     return 'Alternativa rota!';
