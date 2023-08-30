@@ -11,4 +11,8 @@ class UserController extends Controller
     {
         dd('x');
     }
+
+    public function show($id){
+        dd('show', $id);
+    }
 }

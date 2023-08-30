@@ -9,21 +9,6 @@
 
 
 # Sumário
-### The Basics
-- Routing
-- Basic Routing
-- Redirect Routes
-- View Routes
-- The Route List
-- Route Parameters
-- Required Parameters
-- Optional Parameters
-- Regular Expression Constraints
-- Route Groups
-- Middleware
-- Subdomain Routing
-- Route Prefixes
-- Route Name Prefixes
-- Fallback Routes
-- Dependency Injection & Route Parameters
-- Route Model Binding
+### Writing Controllers
+- Basic Controllers
+- Controllers
