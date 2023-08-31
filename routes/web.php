@@ -4,12 +4,10 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UserController;
 
 
-/**8 - Resource controllers - definindo métodos na rota*/
+/**9 - Resource controllers - múltiplos resources*/
 
-Route::resource('/users', UserController::class)->only([
-    'index', 'show'
-]);
+Route::resources([
+    'users', UserController::class,
+    'posts', UserController::class,
 
-Route::resource('/users', UserController::class)->except([
-    'create', 'store', 'update', 'destroy'
 ]);
