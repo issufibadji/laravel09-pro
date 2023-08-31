@@ -4,12 +4,11 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UserController;
 
 
-/**9 - Resource controllers - múltiplos resources*/
-Route::resource('/users', UserController::class)->except(['create', 'edit']);
+/**11-Resource controllers - aninhando rotas*/
 
-Route::apiResource('users',UserController::class);//é igual a except(['create', 'edit']);
+//users/{user}/comments/
+//users/{user}/comments/{comment} usa quando vc precisa de passar id do user
 
-Route::apiResources([
-    'users', UserController::class,
-    'posts', UserController::class,
-]);
+Route::resource('users.commets', UserController::class);
+//comments/{comment} não precisa de id user
+Route::resource('users.commets', UserController::class)->shallow();
